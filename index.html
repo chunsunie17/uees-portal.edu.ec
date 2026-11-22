@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>Portal Académico DEMO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ===================== PANTALLA 1: LOGIN ===================== -->
+  <div id="pantalla-login" class="pantalla activa">
+
+    <div class="logo-container">
+      <img src="lologo.png" alt="Logo" class="logo-img" width="250">
+    </div>
+    
+
+    <div class="subtitulo-portal">PORTAL DE SERVICIOS</div>
+
+    <form class="form-login" onsubmit="return irAlPortal(event)">
+      <div class="campo-input">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 21c0-4 4-7 8-7s8 3 8 7"/>
+        </svg>
+        <div class="caja-input">
+          <input type="text" value="valeria.ribadeneira">
+        </div>
+      </div>
+
+      <div class="campo-input">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <circle cx="8" cy="8" r="4"/>
+          <path d="M11 11l9 9m-4-4l2.5-2.5m-6-6l2.5-2.5"/>
+        </svg>
+        <div class="caja-input">
+          <input id="campo-password" type="password" placeholder="Contraseña">
+          <svg class="toggle-ojo" onclick="mostrarPassword()" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="recuperar">Recuperar Contraseña</div>
+
+      <button type="submit" class="btn-portal">INGRESAR</button>
+      <button type="button" class="btn-portal" onclick="volverAlLogin()">ATRAS</button>
+    </form>
+  </div>
+
+  <!-- ===================== PANTALLA 2: PORTAL ===================== -->
+  <div id="pantalla-portal" class="pantalla">
+    <div class="header-portal">
+      <div></div>
+
+      <div style="position:relative;">
+        <div class="pildora-usuario" onclick="toggleMenu()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21c0-4 4-7 8-7s8 3 8 7"/>
+          </svg>
+          <span>valeria.ribadeneira</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </div>
+
+        <div id="menu-usuario" class="menu-desplegable">
+          <div class="opcion-menu opcion-destacada">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <circle cx="8" cy="8" r="4"/>
+              <path d="M11 11l9 9m-4-4l2.5-2.5m-6-6l2.5-2.5"/>
+            </svg>
+            Cambiar Contraseña
+          </div>
+          <div class="opcion-menu opcion-normal">
+            <span class="icono-circulo-gris">?</span>
+            Centro de ayuda
+          </div>
+          <div class="opcion-menu opcion-normal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2">
+              <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/>
+              <path d="M16 17l5-5-5-5"/>
+              <path d="M21 12H9"/>
+            </svg>
+            Cerrar Sesión
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contenido-portal">
+      <div class="texto-bienvenida" id="texto-bienvenida">
+        <h1>Bienvenido</h1>
+        <p>Selecciona una carrera para continuar.</p>
+      </div>
+
+      <div class="tarjeta tarjeta-id" id="tarjeta-1">
+        <div class="sombra-foto">
+          <img class="foto-perfil" src="pro.png" alt="Foto de perfil">
+        </div>
+        <hr class="linea-divisoria">
+        <div class="datos-id">
+          <div class="nombre">VALERIA RIBADENEIRA</div>
+          <div class="nombre">ZAPATA</div>
+          <div class="etiqueta">Nombre</div>
+          <div class="nombre">0930332366</div>
+          <div class="etiqueta">Cédula</div>
+        </div>
+      </div>
+
+      <div class="tarjeta tarjeta-carrera" id="tarjeta-2">
+        <div class="circulo-icono">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <path d="M22 10L12 5 2 10l10 5 10-5z"/>
+            <path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/>
+          </svg>
+        </div>
+        <div class="carrera-nombre">INGENIERO</div>
+        <div class="facultad-nombre">FACULTAD DE INGENIERÍA</div>
+        <div class="pastilla-codigo">2026250166</div>
+      </div>
+    </div>
+
+    <div class="footer-portal">
+      Copyright © 2026. Portal Académico DEMO. Todos los derechos
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
